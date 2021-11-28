@@ -29,3 +29,4 @@ class Game():
 				mesto=int(input('Where'))
 g=Game()
 g.play_game()
+print('Hello world')
