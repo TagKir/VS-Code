@@ -70,4 +70,4 @@ class Game():
 			return 'Player2 win'
 g=Game()
 g.play_game()
-# 
+# TODO: мне надо доработать систему диагональной победы и сделать ничью
