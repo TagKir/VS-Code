@@ -8,7 +8,7 @@ class Game():
 			else:
 				print(f'{a}|',end="")
 	def winner(self,state):
-		win_comb=[(0,1,2),(3,4,5),(6,7,8),(0,3,6),(1,4,7),(2,5,8),(0,4,8),(2,4,6)]
+		win_comb=[(0,1,2),(1,2,3),(2,3,4),(3,4,5),(4,5,6),(5,6,7),(6,7,8)]
 		for z,x,c in win_comb:
 			if state[z]==state[x] and state[x]==state[c] and (state[z]=='X' or state[z]=='O'):
 				return True
@@ -63,11 +63,9 @@ class Game():
 					player1num-=1
 					player2num-=1
 					board2=True
-
-		if player1%2==0:
-			return 'Player1 win'
+		if player1num%2==0:
+			print('Player1 win')
 		else:
-			return 'Player2 win'
+			print('Player2 win')
 g=Game()
 g.play_game()
-# TODO: мне надо доработать систему диагональной победы и сделать ничью
