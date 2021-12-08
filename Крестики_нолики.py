@@ -15,6 +15,7 @@ def winner(board):
 
 def play_game():
 	global board
+	print_board(board)
 	word='X'
 	player1=input('Кто играет за крестик?\n')
 	while player1=='':
@@ -27,8 +28,12 @@ def play_game():
 	while winner(board)==0:
 		try:
 			index=int(input(f'{common_player},где ты хочешь поставить' +(' крестик' if word=='X' else ' нолик')+ '\n'))
+			if 9>index>1:
+				pass
+			else:
+				raise 	KeyError
 		except:
-			print('Нельзя писать не цифру')
+			print('Нельзя писать не целое число от 1 до 9')
 			continue
 		try:
 			if board[index-1]!='X' and board[index-1]!='O': 
@@ -43,6 +48,9 @@ def play_game():
 		word='O' if word=='X' else 'X'
 		common_player=player2 if common_player==player1 else player1
 		draw=[draw for draw in board if draw==' ']
+		if winner(board)=='':
+			print('Победитель:' + (player2 if common_player==player1 else player1))
+			break
 		if draw!=[]:
 			continue
 		else:
@@ -50,7 +58,6 @@ def play_game():
 			common_player=player1
 			word='X'
 			board=[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-	print('Победитель:' + (player2 if common_player==player1 else player1))
 play_game()
 # *  Урааааааааааааааааааааааааааааааааааааааааа
 # Todo     Настрой Microsoft Edge
