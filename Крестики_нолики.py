@@ -30,10 +30,14 @@ def play_game():
 		except:
 			print('Нельзя писать не цифру')
 			continue
-		if board[index-1]!='X' and board[index-1]!='O': 
-			board[index-1]=word
-		else:
-			print('Писать в одно и тоже место нельзя!')
+		try:
+			if board[index-1]!='X' and board[index-1]!='O': 
+				board[index-1]=word
+			else:
+				print('Писать в одно и тоже место нельзя!')
+				continue
+		except:
+			print('Такой клеточки нет')
 			continue
 		print_board(board)
 		word='O' if word=='X' else 'X'
