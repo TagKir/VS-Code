@@ -40,3 +40,5 @@ def play_game():
 			board=[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 	print('Победитель:' + (player2 if common_player==player1 else player1))
 play_game()
+# *  Урааааааааааааааааааааааааааааааааааааааааа
+# Todo     Настрой Microsoft Edge
