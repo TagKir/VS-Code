@@ -28,7 +28,7 @@ def play_game():
 	while winner(board)==0:
 		try:
 			index=int(input(f'{common_player},где ты хочешь поставить' +(' крестик' if word=='X' else ' нолик')+ '\n'))
-			if 9>index>1:
+			if 10>index>1:
 				pass
 			else:
 				raise 	KeyError
