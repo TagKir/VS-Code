@@ -1,7 +1,7 @@
 board=[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 def print_board(board):
-	for i,c in enumerate(board):
-		if (i+1)%3==0:
+	for i , c in enumerate(board):
+		if (i+1) % 3 == 0:
 			print(f'{c}')
 		else:
 			print(f'{c}|', end='')
